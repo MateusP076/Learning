@@ -8,19 +8,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 @Data
-@Entity(name="TabelaUser")
+@Entity(name="TabelaUsuario")
 public class UserModel {
     @Id
     @GeneratedValue(generator="UUID")
     private UUID id;
-    @Nonnull
     private String nome;
     @Column(unique=true)
     private String username;
     private String telefone;
     private String senha;
-
-    public UserModel() {
-        
-    }
 }
