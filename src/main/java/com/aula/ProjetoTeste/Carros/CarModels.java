@@ -14,50 +14,47 @@ public class CarModels {
     
     @Id
     @GeneratedValue(generator = "UUID")
-    private UUID Id_carro;
-    private String Marca;
-    private String Ano;
-    private double Valor;
-    private String Carro;
-    private UUID id_user;
-
-    public UUID getId_carro() {
-        return Id_carro;
+    private UUID idcarro;
+    private String marca;
+    private String ano;
+    private String valor;
+    private String carro;
+    private UUID fkuser;
+    public UUID getIdcarro() {
+        return idcarro;
     }
-    public void setId_carro(UUID id_carro) {
-        this.Id_carro = id_carro;
+    public void setIdcarro(UUID idcarro) {
+        this.idcarro = idcarro;
     }
     public String getMarca() {
-        return Marca;
+        return marca;
     }
     public void setMarca(String marca) {
-        this.Marca = marca;
+        this.marca = marca;
     }
     public String getAno() {
-        return Ano;
+        return ano;
     }
     public void setAno(String ano) {
-        this.Ano = ano;
+        this.ano = ano;
     }
-    public double getValor() {
-        return Valor;
+    public String getValor() {
+        return valor;
     }
-    public void setValor(double valor) {
-        this.Valor = valor;
+    public void setValor(String valor) {
+        this.valor = valor;
     }
     public String getCarro() {
-        return Carro;
+        return carro;
     }
     public void setCarro(String carro) {
-        this.Carro = carro;
+        this.carro = carro;
     }
-    public UUID getId_user() {
-        return id_user;
+    public UUID getFkuser() {
+        return fkuser;
     }
-    public void setId_user(UUID id_user) {
-        this.id_user = id_user;
+    public void setFkuser(UUID fkuser) {
+        this.fkuser = fkuser;
     }
-
     
-
 }
