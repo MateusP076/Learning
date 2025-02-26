@@ -3,10 +3,12 @@ package com.aula.ProjetoTeste.User;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -19,9 +21,9 @@ public class UserControler {
     public String retorno(){
         return "Hello noia";
     }
+    @ResponseStatus (HttpStatus.CREATED)
     @PostMapping ("/criar")
     public UserModel criar(@RequestBody UserModel userModel, HttpServletRequest request){
-
         var criado=this.userRepository.save(userModel);
         return criado;
     }    
