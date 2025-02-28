@@ -23,15 +23,15 @@ public class CarController {
         return "Ta Funfando ate aq";
     }
 
-    @PostMapping("/cadastrar")
-    public ResponseEntity Cadastrar(@RequestBody CarModels carModels, HttpServletRequest request){
-        var verifica=this.carRepository.findCarModelsByCarro(carModels.getCarro());
-        if (verifica!=null){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Carro existente");
-        } else {
-            var salvo=this.carRepository.save(carModels);
-            return ResponseEntity.status(HttpStatus.CREATED).body(salvo);
-        }
-
-    }
+//    @PostMapping("/cadastrar")
+//    public ResponseEntity Cadastrar(@RequestBody CarModels carModels, HttpServletRequest request){
+//        var verifica=this.carRepository.findCarModelsByCarro(carModels.getCarro());
+//        if (verifica!=null){
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Carro existente");
+//        } else {
+//            var salvo=this.carRepository.save(carModels);
+//            return ResponseEntity.status(HttpStatus.CREATED).body(salvo);
+//        }
+//
+//    }
 }

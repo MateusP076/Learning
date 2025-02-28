@@ -29,7 +29,7 @@ public class UserControler {
 
     @PostMapping ("/criar")
     public ResponseEntity criar(@RequestBody UserModel userModel, HttpServletRequest request){
-        var criado=this.userRepository.findByUsername(userModel.getUsername());
+            var criado=this.userRepository.findByUsername(userModel.getUsername());
             if (criado!=null){
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuario ja existente");
             } else {
