@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 public class CarModels {
     @Id
     @GeneratedValue(generator = "UUID")
+<<<<<<< HEAD
     private UUID Id_carro;
     private String Marca;
     private String Ano;
@@ -22,21 +23,39 @@ public class CarModels {
 
     public void setId_carro(UUID id_carro) {
         Id_carro = id_carro;
+=======
+    private UUID idcarro;
+    private String marca;
+    private String ano;
+    private String valor;
+    private String carro;
+    private UUID fkuser;
+    public UUID getIdcarro() {
+        return idcarro;
+    }
+    public void setIdcarro(UUID idcarro) {
+        this.idcarro = idcarro;
+>>>>>>> 8028a86520d7e0ae543f0b494016822800bbdb4e
     }
 
     public String getMarca() {
-        return Marca;
+        return marca;
     }
 
     public void setMarca(String marca) {
+<<<<<<< HEAD
         Marca = marca;
+=======
+        this.marca = marca;
+>>>>>>> 8028a86520d7e0ae543f0b494016822800bbdb4e
     }
 
     public String getAno() {
-        return Ano;
+        return ano;
     }
 
     public void setAno(String ano) {
+<<<<<<< HEAD
         Ano = ano;
     }
 
@@ -46,13 +65,23 @@ public class CarModels {
 
     public void setValor(Double valor) {
         Valor = valor;
+=======
+        this.ano = ano;
+    }
+    public String getValor() {
+        return valor;
+    }
+    public void setValor(String valor) {
+        this.valor = valor;
+>>>>>>> 8028a86520d7e0ae543f0b494016822800bbdb4e
     }
 
     public String getCarro() {
-        return Carro;
+        return carro;
     }
 
     public void setCarro(String carro) {
+<<<<<<< HEAD
         Carro = carro;
     }
 
@@ -63,4 +92,15 @@ public class CarModels {
     public void setId_user(UUID id_user) {
         this.id_user = id_user;
     }
+=======
+        this.carro = carro;
+    }
+    public UUID getFkuser() {
+        return fkuser;
+    }
+    public void setFkuser(UUID fkuser) {
+        this.fkuser = fkuser;
+    }
+    
+>>>>>>> 8028a86520d7e0ae543f0b494016822800bbdb4e
 }

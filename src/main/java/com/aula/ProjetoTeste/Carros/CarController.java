@@ -1,6 +1,7 @@
 package com.aula.ProjetoTeste.Carros;
 
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+=======
+import org.springframework.web.bind.annotation.*;
+
+import jakarta.servlet.http.HttpServletRequest;
+>>>>>>> 8028a86520d7e0ae543f0b494016822800bbdb4e
 
 import org.springframework.web.bind.annotation.RestController;
 
