@@ -1,10 +1,13 @@
 package com.aula.ProjetoTeste.Cursos;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpClientErrorException.BadRequest;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -14,8 +17,13 @@ public class CursoControler {
     @Autowired
     private CursoRepository cursoRepository;
     @PostMapping("/cadastrar")
-    public  Cursomodel criar(@RequestBody Cursomodel cursomodel, HttpServletRequest request){
-        var curso=this.cursoRepository.save(cursomodel);
-        return curso;
+    public  ResponseEntity criar(@RequestBody Cursomodel cursomodel, HttpServletRequest request){
+        var condicao= this.cursoRepository.findBynomecurso(cursomodel.getNomecurso());
+        if (condicao!=null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Curso ja existe");
+        } else{
+            var salvar= this.cursoRepository.save(cursomodel);
+            return ResponseEntity.status(HttpStatus.CREATED).body(salvar);
+        }
     }     
 }
